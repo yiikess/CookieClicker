@@ -11,11 +11,12 @@ namespace Graficke_rozhrani
         int SilaKliknuti = 1;
         int PasivniPrijem = 0;
         int PasivniKrabice = 0;
-        private void mainClicker_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             PocetCokies += SilaKliknuti;
             PocetCookies.Text = Convert.ToString(PocetCokies);
         }
+
 
         private void ZlepseniSily_Click(object sender, EventArgs e)
         {
@@ -61,5 +62,7 @@ namespace Graficke_rozhrani
             PocetCokies += PasivniKrabice;
             PocetCookies.Text = PocetCokies.ToString();
         }
+
+
     }
 }

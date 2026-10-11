@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            mainClicker = new Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             PocetCookies = new Label();
             ZlepseniSily = new Button();
             PasivniKlikani = new Button();
@@ -39,17 +39,9 @@
             label_VelkyBalik = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // mainClicker
-            // 
-            mainClicker.Location = new Point(340, 114);
-            mainClicker.Name = "mainClicker";
-            mainClicker.Size = new Size(114, 60);
-            mainClicker.TabIndex = 0;
-            mainClicker.Text = "Cookie";
-            mainClicker.UseVisualStyleBackColor = true;
-            mainClicker.Click += mainClicker_Click;
             // 
             // PocetCookies
             // 
@@ -125,14 +117,27 @@
             // 
             // timer2
             // 
-            timer2.Interval = 5000;
+            timer2.Interval = 15000;
             timer2.Tick += timer2_Tick;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(291, 101);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(213, 99);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(label_VelkyBalik);
             Controls.Add(label_PasivniKlikani);
             Controls.Add(label_ZlepseniSiliClicknuti);
@@ -140,16 +145,14 @@
             Controls.Add(PasivniKlikani);
             Controls.Add(ZlepseniSily);
             Controls.Add(PocetCookies);
-            Controls.Add(mainClicker);
             Name = "Form1";
             Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button mainClicker;
         private Label PocetCookies;
         private Button ZlepseniSily;
         private Button PasivniKlikani;
@@ -159,5 +162,6 @@
         private Label label_VelkyBalik;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private PictureBox pictureBox1;
     }
 }
