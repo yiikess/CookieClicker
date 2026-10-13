@@ -37,10 +37,13 @@
             label_ZlepseniSiliClicknuti = new Label();
             label_PasivniKlikani = new Label();
             label_VelkyBalik = new Label();
-            timer1 = new System.Windows.Forms.Timer(components);
-            timer2 = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            casovac_na_pasiv_cookies = new System.Windows.Forms.Timer(components);
+            casovac_na_balik = new System.Windows.Forms.Timer(components);
+            main_clicker = new PictureBox();
+            label_pasivni_cookies_cena = new Label();
+            admin_button = new Button();
+            casovac_cena_upgradu = new System.Windows.Forms.Timer(components);
+            ((System.ComponentModel.ISupportInitialize)main_clicker).BeginInit();
             SuspendLayout();
             // 
             // PocetCookies
@@ -69,7 +72,6 @@
             PasivniKlikani.Name = "PasivniKlikani";
             PasivniKlikani.Size = new Size(128, 23);
             PasivniKlikani.TabIndex = 3;
-            PasivniKlikani.Text = "200 Cookies";
             PasivniKlikani.UseVisualStyleBackColor = true;
             PasivniKlikani.Click += PasivniKlikani_Click;
             // 
@@ -110,34 +112,61 @@
             label_VelkyBalik.TabIndex = 7;
             label_VelkyBalik.Text = "Velký bálík cookies";
             // 
-            // timer1
+            // casovac_na_pasiv_cookies
             // 
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
+            casovac_na_pasiv_cookies.Interval = 1000;
+            casovac_na_pasiv_cookies.Tick += casovac_na_pasiv_cookies_Tick;
             // 
-            // timer2
+            // casovac_na_balik
             // 
-            timer2.Interval = 15000;
-            timer2.Tick += timer2_Tick;
+            casovac_na_balik.Interval = 15000;
+            casovac_na_balik.Tick += casovac_na_balik_Tick;
             // 
-            // pictureBox1
+            // main_clicker
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(291, 101);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(213, 99);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            main_clicker.BackColor = Color.Transparent;
+            main_clicker.Image = (Image)resources.GetObject("main_clicker.Image");
+            main_clicker.Location = new Point(291, 101);
+            main_clicker.Name = "main_clicker";
+            main_clicker.Size = new Size(213, 99);
+            main_clicker.SizeMode = PictureBoxSizeMode.Zoom;
+            main_clicker.TabIndex = 8;
+            main_clicker.TabStop = false;
+            main_clicker.Click += main_clicker_Click;
+            // 
+            // label_pasivni_cookies_cena
+            // 
+            label_pasivni_cookies_cena.AutoSize = true;
+            label_pasivni_cookies_cena.Location = new Point(48, 181);
+            label_pasivni_cookies_cena.Name = "label_pasivni_cookies_cena";
+            label_pasivni_cookies_cena.Size = new Size(25, 15);
+            label_pasivni_cookies_cena.TabIndex = 9;
+            label_pasivni_cookies_cena.Text = "200";
+            label_pasivni_cookies_cena.Click += label_pasivni_cookies_cena_Click;
+            // 
+            // admin_button
+            // 
+            admin_button.Location = new Point(303, 397);
+            admin_button.Name = "admin_button";
+            admin_button.Size = new Size(151, 23);
+            admin_button.TabIndex = 10;
+            admin_button.Text = "admin_button";
+            admin_button.UseVisualStyleBackColor = true;
+            admin_button.Click += admin_button_Click;
+            // 
+            // casovac_cena_upgradu
+            // 
+            casovac_cena_upgradu.Interval = 200;
+            casovac_cena_upgradu.Tick += casovac_cena_upgradu_Tick;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(pictureBox1);
+            Controls.Add(admin_button);
+            Controls.Add(label_pasivni_cookies_cena);
+            Controls.Add(main_clicker);
             Controls.Add(label_VelkyBalik);
             Controls.Add(label_PasivniKlikani);
             Controls.Add(label_ZlepseniSiliClicknuti);
@@ -147,7 +176,7 @@
             Controls.Add(PocetCookies);
             Name = "Form1";
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)main_clicker).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,8 +189,11 @@
         private Label label_ZlepseniSiliClicknuti;
         private Label label_PasivniKlikani;
         private Label label_VelkyBalik;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Timer timer2;
-        private PictureBox pictureBox1;
+        private System.Windows.Forms.Timer casovac_na_pasiv_cookies;
+        private System.Windows.Forms.Timer casovac_na_balik;
+        private PictureBox main_clicker;
+        private Label label_pasivni_cookies_cena;
+        private Button admin_button;
+        private System.Windows.Forms.Timer casovac_cena_upgradu;
     }
 }
